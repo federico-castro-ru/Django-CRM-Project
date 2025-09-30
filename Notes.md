@@ -4,7 +4,7 @@ o---------------------------------------------------o
 o---------------------------------------------------o
 
 Create a Python virtual environment
-	python -m venv virt
+	python -m venv virt				// -m runs a module as a script
 	
 Source the environment
 	source virt/Scripts/activate
@@ -54,7 +54,7 @@ Run the server
 
 
 o--------------------------o
-|	Deploying on GitHub    |
+|	Deploying to GitHub    |
 o--------------------------o
 
 Creating SSH key on the computer
@@ -84,12 +84,33 @@ Connect to GitHub
 	git push -u origin main
 
 
-o------------------------------------------------------------------
-| IMPORTANT NOTE
-|	Note the structure of the folder:
-|	Project CRM App/	<- Main folder
-|		virt/				<- Python virtual environment data
-|		dcrm/				<- Main Django
-|			dcrm/				<- Django "settings" folder
-|			website/			<- (Custom) app folder
-o------------------------------------------------------------------
+o-------------------------------------------------------------------o
+| IMPORTANT NOTE													|
+|	Note the structure of the folder:								|
+|	MyProjectFolder/	<- Main folder								|
+|		virt/				<- Python virtual environment data		|
+|		dcrm/				<- Django project folder				|
+|			.git/				<- Root git directory				|
+|			dcrm/				<- Django "settings" folder			|
+|			website/			<- (Custom) app folder				|
+o-------------------------------------------------------------------o
+
+Manipulate the urls.py inside the Django settings folder:
+	from django.contrib import admin
+	from django.urls import path, include 
+
+	urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('', include('website.urls'))
+	]
+
+
+**Steps for creating a Django webpage:**
+1. Create a template file (HTML page)
+2. Create a URL
+3. Create a view
+
+In website/templates/
+	Create
+	/base.html
+	/home.html
