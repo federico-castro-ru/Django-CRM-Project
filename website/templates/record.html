@@ -17,7 +17,8 @@
 <li class="list-group-item">{{ customer_record.zipcode }}</li>
 </ul>
 
-<a href="{% url 'update_record' customer_record.id %}" type="button" class="btn btn-info">Update record</a>
+<br>
+<a href="{% url 'update_record' customer_record.id %}" type="button" class="btn btn-primary">Update record</a>
 <a href="{% url 'delete_record' customer_record.id %}" type="button" class="btn btn-danger">Delete record</a>
 
 {% endblock %}
