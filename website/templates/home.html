@@ -3,11 +3,11 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
+<!-- User is authenticated -->
 <h1>Hello Russia!</h1>
 
 {% else %}
-
+<!-- User is not authenticated -->
 <div class="col-md-6 offset-md-3">
     <h1>Login</h1>
     <form method="POST" action="{% url 'home' %}">
@@ -25,7 +25,6 @@
         </form>
     </form>
 </div>
-
 {% endif %}
 
 {% endblock %}

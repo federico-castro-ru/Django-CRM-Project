@@ -48,7 +48,7 @@ Create Django superuser
 		username admin
 		password Moy_Password123
 
-Run the server
+Run the server							<- Do this on each startup
 	python manage.py runserver
 
 
@@ -114,3 +114,10 @@ In website/templates/
 	Create
 	/base.html
 	/home.html
+
+
+Django uses the MVC pattern, except it's called Model Template View, where
+Template = *view*
+View = *controller*
+
+Template <----> View <----> Model
