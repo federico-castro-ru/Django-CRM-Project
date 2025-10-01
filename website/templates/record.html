@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Record nº {{ customer_record.id }}</h1>
+
+<a href="{% url 'home' %}" class="link-primary">Go back to the homepage</a>
+<br>
+
+<ul class="list-group">
+<li class="list-group-item">{{ customer_record.first_name }}</li>
+<li class="list-group-item">{{ customer_record.last_name }}</li>
+<li class="list-group-item">{{ customer_record.email }}</li>
+<li class="list-group-item">{{ customer_record.phone }}</li>
+<li class="list-group-item">{{ customer_record.address }}</li>
+<li class="list-group-item">{{ customer_record.city }}</li>
+<li class="list-group-item">{{ customer_record.zipcode }}</li>
+</ul>
+
+<a href="{% url 'update_record' customer_record.id %}" type="button" class="btn btn-info">Update record</a>
+<a href="{% url 'delete_record' customer_record.id %}" type="button" class="btn btn-danger">Delete record</a>
+
+{% endblock %}

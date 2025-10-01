@@ -121,3 +121,8 @@ Template = *view*
 View = *controller*
 
 Template <----> View <----> Model
+
+So to create a new page, or anything associated with an URL (i.e CRUD functions), you must create:
+1. A url (in urls.py)
+2. A view
+3. A template (html file, if appliable)
